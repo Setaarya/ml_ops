@@ -3,7 +3,7 @@ FROM tensorflow/serving:latest
 # Copy model ke dalam container
 COPY ./output/serving_model /models/hd-model
 
-# Set environment variabel
+# Set environment variabel 
 ENV MODEL_NAME=hd-model
 ENV PORT=8501
 ENV MODEL_BASE_PATH=/models

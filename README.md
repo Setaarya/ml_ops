@@ -1,4 +1,4 @@
-# Submission 1: Prediksi Penyakit Jantung
+# Submission 2: Prediksi Penyakit Jantung
 Nama: Yulianto Aryaseta
 
 Username dicoding: yulianto_aryaseta
@@ -14,4 +14,4 @@ Username dicoding: yulianto_aryaseta
 | Performa model | Model menunjukkan performa excellent dengan akurasi pelatihan 93.69%, precision 93.19%, recall 95.52%, AUC 98.63%, dan loss 0.1493. Hasil ini menunjukkan model sangat baik dalam mendeteksi penyakit jantung dengan tingkat false negative yang rendah. |
 | Opsi deployment | Deployment dilakukan menggunakan platform Railway dengan containerization melalui Dockerfile. Model yang di-deploy langsung menggunakan artifact dari TFX Pusher component yang telah melalui proses validasi. Railway dipilih karena kemudahan integrasi dengan Git, auto-deploy dari repository, dan support untuk containerized applications. |
 | Web app | [Model Prediksi Penyakit Jantung](https://mlops-production-fd3b.up.railway.app/v1/models/hd-model/metadata) |
-| Monitoring | [Belum diimplementasikan - membutuhkan informasi tentang sistem monitoring model serving seperti tracking drift, latency, dan accuracy over time] |
+| Monitoring | Sistem monitoring menggunakan Prometheus untuk memantau performa model serving dengan berbagai metrik penting: Request Monitoring (jumlah permintaan prediksi dan waktu respons), Model Loading (waktu dan status loading model), Graph Execution (performa eksekusi model dan penggunaan resource), Session Management (pengelolaan sesi TensorFlow), dan Input Processing (ukuran data input dan waktu pemrosesan). Salah satu hasil dari metriknya adalah latency loading model dengan waktu sekitar 0.2-0.3 detik, waktu eksekusi grafik pada computational graph sekitar 3.500 microseconds, dan total jumlah byte dari input tensor yang digunakan untuk menjalankan graph TensorFlow pada setiap inferensi stabil di sekitar 650 bytes. |

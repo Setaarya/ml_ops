@@ -2,9 +2,11 @@ FROM tensorflow/serving:latest
 
 # Copy model ke dalam container
 COPY ./output/serving_model /models/hd-model
+COPY ./config /model_config
 
 # Set environment variabel 
 ENV MODEL_NAME=hd-model
+ENV MONITORING_CONFIG="/model_config/prometheus.config"
 ENV PORT=8501
 ENV MODEL_BASE_PATH=/models
 
